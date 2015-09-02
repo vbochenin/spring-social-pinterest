@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.social.api.PinterestProfile;
 import org.springframework.social.api.UserOperations;
 import org.springframework.social.api.impl.json.PinterestProfileContainer;
+import org.springframework.social.api.impl.json.PinterestProfileList;
 
 import java.util.List;
 
@@ -37,14 +38,12 @@ public class UserOperationsTemplate implements UserOperations {
 
     @Override
     public List<PinterestProfile> getFollowers() {
-        //TODO add implementation
-        return null;
+        return pinterestTemplate.getRestTemplate().getForObject(API_URL_BASE + "/me/followers/", PinterestProfileList.class).getList();
     }
 
     @Override
     public List<PinterestProfile> getFollowingUsers() {
-        //TODO add implementation
-        return null;
+        return pinterestTemplate.getRestTemplate().getForObject(API_URL_BASE + "/me/following/users/", PinterestProfileList.class).getList();
     }
 
     @Override
