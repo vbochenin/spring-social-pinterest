@@ -13,4 +13,5 @@ public class PinterestConnectionFactory extends OAuth2ConnectionFactory<Pinteres
     public PinterestConnectionFactory(String clientId, String clientSecret) {
         super(PINTEREST_PROVIDER, new PinterestServiceProvider(clientId, clientSecret), new PinterestAdapter());
     }
+
 }

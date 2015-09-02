@@ -8,49 +8,70 @@ import java.util.Map;
  * @author vbochenin
  * @since 02/09/2015.
  */
-public interface PinterestProfile {
+public class PinterestProfile {
+
+    private String id;
+    private String username;
+    private String firstname;
+    private String lastname;
+    private String bio;
+    private DateTime createdAt;
+    private Map<String, Integer> counts;
+    private Map<String, PinterestImage> images;
 
     /**
      * The user’s id
      *
      * @return
      */
-    String getId();
+    public String getId() {
+        return id;
+    }
 
     /**
      * The user’s Pinterest username
      *
      * @return
      */
-    String getUsername();
+    public String getUsername() {
+        return username;
+    }
 
     /**
      * The user’s first name
      *
      * @return
      */
-    String getFirstName();
+    public String getFirstName() {
+        return firstname;
+    }
 
     /**
      * The user’s last name
      *
      * @return
      */
-    String getLastName();
+    public String getLastName() {
+        return lastname;
+    }
 
     /**
      * The user’s bio
      *
      * @return
      */
-    String getBio();
+    public String getBio() {
+        return bio;
+    }
 
     /**
      * Timestamp of creation date
      *
      * @return
      */
-    DateTime getCreatedAt();
+    public DateTime getCreatedAt() {
+        return createdAt;
+    }
 
 
     /**
@@ -58,12 +79,16 @@ public interface PinterestProfile {
      *
      * @return
      */
-    Map<String, Integer> getCounts();
+    public Map<String, Integer> getCounts() {
+        return counts;
+    }
 
     /**
      * The images that represents the user. This is determined by the request.
      *
      * @return
      */
-    Map<String, PinterestImage> getImages();
+    public Map<String, PinterestImage> getImages() {
+        return images;
+    }
 }
